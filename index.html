@@ -1,738 +1,522 @@
-<!--
- * @Author: Jon Barron
- * @Date: 2019-05-11 22:15:22
- * @Editors: whyisyoung
- * @EditTime: 2020-10-23 10:57:25
- * @Editors:sheng-qiang
- * @EditTime: 2021-02-05 22:39:00
- * @Editors:Yongchun Zhu
- * @EditTime: 2022-03-22 23:03:00
- * @LastEditors:Fuwei Zhang
- * @LastEditTime: 2025-07-20 10:00:00
- -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name=viewport content="width=device-width">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <meta name="google-site-verification" content="p7SNRHPF7y83Q-nNBLkrxFhAAosW2t40unwTxByZ0vo" />
-  <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-
-    a {
-      color: #1772d0;
-      /* color: #07889b; */
-      text-decoration: none;
-    }
-   
-    a.black {
-      color: #000000;
-      /* color: #07889b; */
-      text-decoration: none;
-    }
-
-    span.tag {
-      color: #FFFFFF;
-      /* color: #07889b; */
-      background-color:#0076DF;
-      box-shadow: 3px 3px 1px #E0E0E0;
-      padding:1px 5px 2px 5px;
-    }
-
-    a:focus,
-    a:hover {
-      color: #e46911; /* #f09228; */
-      text-decoration: none;
-    }
-
-    body,
-    td,
-    th,
-    tr,
-    p,
-    a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px
-    }
-
-    strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-    }
-
-    heading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 22px;
-      color: #e46911;
-    }
-
-    subheading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 18px;
-      font-style:italic;
-      color: #E68D51;
-    }
-
-    papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 32px;
-    }
-
-    .footer {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px;
-      opacity: 0.75;
-      color: #777;
-    }
-
-    .one {
-      width: 160px;
-      height: 160px;
-      position: relative;
-    }
-
-    .two {
-      width: 160px;
-      height: 160px;
-      position: absolute;
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
-    }
-
-    .fade {
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
-    }
-
-    span.highlight {
-      background-color: #ffffd0;
-    }
-
-    span.artifact {
-      color:#6cb41b;
-      padding: 1px;
-    }
-
-    span.underline {
-      border-bottom:1px solid black;
-      padding-bottom:1px;
-    }
-
-    span.tldr {
-      color: #555555;
-    }
-
-    em.highlight {
-      color: #e37222;
-    }
-  </style>
-  <title>Fuwei Zhangs's Homepage</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="p7SNRHPF7y83Q-nNBLkrxFhAAosW2t40unwTxByZ0vo" />
+    <title>Fuwei Zhang's Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #2563eb;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .publication-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 768px) {
+            .publication-item {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+        }
+        .publication-year {
+            color: #94a3b8;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.875rem;
+            width: 4rem;
+            padding-top: 0.25rem;
+            letter-spacing: -0.025em;
+            flex-shrink: 0;
+        }
+        .publication-title {
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        .publication-item:hover .publication-title {
+            color: #2563eb;
+            transition-colors: 0.2s;
+        }
+        .publication-authors {
+            color: #475569;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .publication-venue {
+            color: #64748b;
+            font-size: 0.875rem;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+        .publication-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .publication-link {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 9999px;
+            color: #475569;
+            transition: all 0.2s;
+        }
+        .publication-link:hover {
+            background-color: #f8fafc;
+        }
+    </style>
 </head>
 
-<body>
-  <table width="960" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <!-- Intro Begin -->
-        <table width="100%" align="left" border="0" cellspacing="0" cellpadding="12" style="table-layout:fixed;">
-          <colgroup>
-            <col span="1" style="width: 23%;">
-            <col span="1" style="width: 77%;">
-          </colgroup>
-          <tr>
-            <td valign="middle">
-              <img style="border-radius: 10px;" src="images/zhangfuwei.jpg" height="170px">
-            </td>
-            <td valign="middle">
-              <p align="left">
-                <name>Fuwei Zhang 张富威</name>
-              </p>
-              <p>
-                I am a 2rd-year PhD candidate under the supervision of Prof. <a href="https://fuzhenzhuang.github.io/">Fuzhen Zhuang</a> at <a href="https://iai.buaa.edu.cn/">Institute of Artificial Intelligence, Beihang University</a>. My research focuses on Machine Learning and Data Mining. In particular, I am working on Large Language Model, Information Retrieval, Recommender Systems, and Knowledge Graph Representation.
-              </p>
-              <p align=left>Contact: zhangfuwei [AT] buaa [dot] edu [dot] cn & zhangfuwei1998 [AT] gmail [dot] com</p>
-              <p align=left>
-                <a href="https://github.com/zhangfw123"> GitHub </a> &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-                <a href="https://scholar.google.com.hk/citations?user=nrGHgxcAAAAJ&hl=zh-CN">Google Scholar</a> 
-              </p>
-            </td>
-          </tr>
-        </table>
-        <!-- Intro End -->
+<body class="bg-white text-slate-800 leading-relaxed">
 
-        <!-- News Begin -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
-          <tr>
-            <td>
-              <heading>News</heading>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
-          <colgroup>
-            <col span="1" style="width: 23%;">
-            <col span="1" style="width: 77%;">
-          </colgroup>
-         <tr>
-          <tr>
-            <tr>
-            <td valign="center">
-              11/2025
-            </td>
-            <td valign="center">
-              One paper got accepted by AAAI 2026.
-            </td>
-          </tr>
-            <td valign="center">
-              10/2025
-            </td>
-            <td valign="center">
-              Two papers got accepted by WSDM 2026.
-            </td>
-          </tr>
-            <td valign="center">
-              07/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for KDD 2026 (August).
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              05/2025
-            </td>
-            <td valign="center">
-              Two papers got accepted by ACL 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2025
-            </td>
-            <td valign="center">
-                One paper got accepted by TKDE.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for ACM MM 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              02/2025
-            </td>
-            <td valign="center">
-              One paper got accepted by BDMA.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              02/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for ARR.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              02/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for KDD 2025 (February).
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              12/2024
-            </td>
-            <td valign="center">
-              One paper got accepted by AAAI 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              12/2024
-            </td>
-            <td valign="center">
-                One paper got accepted by COLING 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2024
-            </td>
-            <td valign="center">
-                Two papers got accepted by CIKM 2024.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2024
-            </td>
-            <td valign="center">
-                One paper got accepted by TKDE.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              01/2024
-            </td>
-            <td valign="center">
-              One paper got accepted by SDM 2024.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2023
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for AAAI 2024.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2023
-            </td>
-            <td valign="center">
-              One paper got accepted by CIKM 2023. 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2023
-            </td>
-            <td valign="center">
-              One paper got accepted by SIGIR 2023.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2022
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for AAAI 2023.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2022
-            </td>
-            <td valign="center">
-              One paper got accepted by CIKM 2022. 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              12/2021
-            </td>
-            <td valign="center">
-                One paper got accepted by AAAI 2022.
-            </td>
-           </tr>
-          <td>
-           <a href="news.html">Full List</a>
-          </td>
-         </tr>
-        </table>
-        <!-- News End -->
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
+                    Fuwei Zhang
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="publications.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Publications</a>
+                    <a href="news.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">News</a>
+                    <a href="awards.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Awards</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-slate-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="index.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Home</a>
+                <a href="publications.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Publications</a>
+                <a href="news.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">News</a>
+                <a href="awards.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Awards</a>
+            </div>
+        </div>
+    </nav>
 
-        <!-- Publications Begin -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
-          <tr>
-            <td>
-              <heading>Publications (* co-first author)</heading>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
-          <!-- <colgroup>
-            <col span="1" style="width: 23%;">
-            <col span="1" style="width: 77%;">
-          </colgroup> -->
-          <td>
-            <subheading>2026</subheading>
-          </td>
-          <tr>
-            <td valign="center">
-                <span class="tag">[AAAI 2026 Oral]</span>&nbsp;&nbsp;<papertitle>Multi-Aspect Cross-modal Quantization for Generative Recommendation</papertitle>
-                <br>
-                 <span class="underline">Fuwei Zhang</span>, Xiaoyu Liu, Dongbo Xi, Jishen Yin, Huan Chen, Peng Yan, <a class="black" href="https://fuzhenzhuang.github.io/">Fuzhen Zhuang</a>, <a class="black" href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ">Zhao Zhang</a>
-                <br>
-                <i>The Fortieth AAAI Conference on Artificial Intelligence</i>
-                <br>
-                <a href="https://arxiv.org/pdf/2511.15122">Paper</a> /
-                <a href="https://github.com/zhangfw123/MACRec">Code</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[WSDM 2026]</span>&nbsp;&nbsp;<papertitle>Bootstrapping in the Loop: Multi-hop Question Answering via Alternating Decomposition and Retrieval</papertitle>
-                <br>
-                Jiewen He, Zhanpeng Guan, <span class="underline">Fuwei Zhang</span>, <a class="black" href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ">Zhao Zhang</a>, Yongjun Xu
-                <br>
-                <i>The 19th ACM International Conference on Web Search and Data Mining</i>
-                <br>
-                <a href="#">Paper</a>
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[WSDM 2026]</span>&nbsp;&nbsp;<papertitle>CAT-ID^2: Category-Tree Integrated Document Identifier Learning for Generative Retrieval In E-commerce</papertitle>
-                <br>
-                Xiaoyu Liu*, <span class="underline">Fuwei Zhang*</span>, Yiqing Wu, Xinyu Jia, Zenghua Xia, <a class="black" href="https://fuzhenzhuang.github.io/">Fuzhen Zhuang</a>, <a class="black" href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ">Zhao Zhang</a>, Fei Jiang, Wei Lin
-                <br>
-                <i>The 19th ACM International Conference on Web Search and Data Mining</i>
-                <br>
-                <a href="https://arxiv.org/pdf/2511.01461">Paper</a> /
-                <a href="https://github.com/lxbdtt/CAT-ID2">Code</a> 
-            </td>
-          </tr>
-          <td>
-            <subheading>2025</subheading>
-          </td>
-         <tr>
-            <td valign="center">
-                <span class="tag">[ACL 2025]</span>&nbsp;&nbsp;<papertitle>Multi-level Relevance Document Identifier Learning for Generative Retrieval</papertitle>
-                <br>
-                <span class="underline">Fuwei Zhang</span>, Xiaoyu Liu, Jia Xinyu, Yingfei Zhang, Shuai Zhang, Xiang Li, Wei Lin, <a class="black" href="https://fuzhenzhuang.github.io/">Fuzhen Zhuang</a>, <a class="black" href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ">Zhao Zhang</a>
-                <br>
-                <i>Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics</i>
-                <br>
-                <a href="https://aclanthology.org/2025.acl-long.497.pdf">Paper</a> /
-                <a href="https://github.com/zhangfw123/MERGE">Code</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[ACL 2025]</span>&nbsp;&nbsp;<papertitle>HierGR: Hierarchical Semantic Representation Enhancement for Generative Retrieval in Food Delivery Search</papertitle>
-                <br>
-                <span class="underline">Fuwei Zhang*</span>, Xiaoyu Liu*, Jia Xinyu, Yingfei Zhang, Zenghua Xia, Fei Jiang, Wei Lin, <a class="black" href="https://fuzhenzhuang.github.io/"></a>Fuzhen Zhuang</a>, <a class="black" href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ">Zhao Zhang</a>
-                <br>
-                <i>Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics</i>
-                <br>
-                <a href="https://aclanthology.org/2025.acl-industry.31.pdf">Paper</a> /
-                <a href="https://github.com/zhangfw123/HierGR">Code</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[TKDE 2025]</span>&nbsp;&nbsp;<papertitle>AdaE: Knowledge Graph Embedding with Adaptive Embedding Sizes</papertitle>
-                <br>
-                Zhanpeng Guan, <span class="underline">Fuwei Zhang</span>, Zhao Zhang, Fuzhen Zhuang, Fei Wang, Zhulin An, Yongjun Xu </a>
-                <br>
-                <i>IEEE Transactions on Knowledge and Data Engineering</i>
-                <br>
-                <a href="https://ieeexplore.ieee.org/abstract/document/10981648/">Paper</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[COLING 2025]</span>&nbsp;&nbsp;<papertitle>Should We Use a Fixed Embedding Size? Customized Dimension Sizes for Knowledge Graph Embedding</papertitle>
-                <br>
-                Zhanpeng Guan, Zhao Zhang, Yiqing Wu, <span class="underline">Fuwei Zhang</span>, Yongjun Xu</a>
-                <br>
-                <i>Proceedings of the 31st International Conference on Computational Linguistics</i>
-                <br>
-                <a href="https://aclanthology.org/2025.coling-main.604.pdf">Paper</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[BDMA 2025]</span>&nbsp;&nbsp;<papertitle>Knowledge error detection via textual and structural joint learning</papertitle>
-                <br>
-                Xiaoyu Wang, Xiang Ao, <span class="underline">Fuwei Zhang</span>, Zhao Zhang, Qing He</a>
-                <br>
-                <i>Big Data Mining and Analytics</i>
-                <br>
-                <a href="https://ieeexplore.ieee.org/document/10807337">Paper</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[AAAI 2025]</span>&nbsp;&nbsp;<papertitle>Mixed-Curvature Multi-Modal Knowledge Graph Completion</papertitle>
-                <br>
-                Yuxiao Gao, <span class="underline">Fuwei Zhang</span>, Zhao Zhang, Xiaoshuang Min, Fuzhen Zhuang </a>
-                <br>
-                <i>Proceedings of the AAAI Conference on Artificial Intelligence</i>
-                <br>
-                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/33273/35428">Paper</a> 
-            </td>
-          </tr>
-          <td>
-            <subheading>2024</subheading>
-          </td>
-          <tr>
-            <td valign="center">
-                <span class="tag">[CIKM 2024]</span>&nbsp;&nbsp;<papertitle>Exploring high-order user preference with knowledge graph for recommendation</papertitle>
-                <br>
-                Caijun Xu*, <span class="underline">Fuwei Zhang*</span>, Zhao Zhang, Fuzhen Zhuang, Rui Liu </a>
-                <br>
-                <i>Proceedings of the 33rd ACM International Conference on Information and Knowledge Management</i>
-                <br>
-                <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679921">Paper</a> 
-                <a href="https://github.com/molumolua/KUPN">Code</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[CIKM 2024]</span>&nbsp;&nbsp;<papertitle>Multi-view Temporal Knowledge Graph Reasoning</papertitle>
-                <br>
-                <span class="underline">Fuwei Zhang</span>, Zhao Zhang, Fuzhen Zhuang, Zhiqiang Zhang, Jun Zhou, Deqing Wang </a>
-                <br>
-                <i>Proceedings of the 33rd ACM International Conference on Information and Knowledge Management</i>
-                <br>
-                <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679970">Paper</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[TKDE 2024]</span>&nbsp;&nbsp;<papertitle>Temporal knowledge graph reasoning with dynamic memory enhancement</papertitle>
-                <br>
-                <span class="underline">Fuwei Zhang</span>, Zhao Zhang, Fuzhen Zhuang, Yu Zhao, Deqing Wang, Hongwei Zheng </a>
-                <br>
-                <i>IEEE Transactions on Knowledge and Data Engineering</i>
-                <br>
-                <a href="https://ieeexplore.ieee.org/abstract/document/10504973">Paper</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[SDM 2024]</span>&nbsp;&nbsp;<papertitle>Light POI-guided conversational recommender system based on adaptive space</papertitle>
-                <br>
-                Meng Yuan, <span class="underline">Fuwei Zhang</span>, Yiqi Tong, Yuxin Ying, Fuzhen Zhuang, Deqing Wang, Baoxing Huai, Yi Zhang, Jia Su </a>
-                <br>
-                <i>Proceedings of the 2024 SIAM International Conference on Data Mining</i>
-                <br>
-                <a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611978032.83">Paper</a> 
-            </td>
-          </tr>
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-12">
 
-          <td>
-            <subheading>2023</subheading>
-          </td>
+        <!-- Hero Section -->
+        <section class="mb-16">
+            <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                <!-- Profile Image -->
+                <div class="flex-shrink-0">
+                    <img src="images/zhangfuwei.jpg"
+                         alt="Fuwei Zhang"
+                         class="w-40 h-40 rounded-2xl object-cover object-top shadow-lg">
+                </div>
 
-          <tr>
-            <td valign="center">
-                <span class="tag">[CIKM 2023 Best Short Paper]</span>&nbsp;&nbsp;<papertitle>Knowledge graph error detection with hierarchical path structure</papertitle>
-                <br>
-                Zhao Zhang, <span class="underline">Fuwei Zhang</span>, Fuzhen Zhuang, Yongjun Xu </a>
-                <br>
-                <i>Proceedings of the 32nd ACM International Conference on Information and Knowledge Management</i>
-                <br>
-                <a href="https://dl.acm.org/doi/abs/10.1145/3583780.3615201">Paper</a> 
-            </td>
-          </tr>
+                <!-- Info -->
+                <div class="flex-1 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-3">
+                        Fuwei Zhang
+                    </h1>
+                    <p class="text-xl text-slate-500 mb-4">张富威</p>
 
-          <tr>
-            <td valign="center">
-                <span class="tag">[SIGIR 2023]</span>&nbsp;&nbsp;<papertitle>Weighted knowledge graph embedding</papertitle>
-                <br>
-                Zhao Zhang, Zhanpeng Guan, <span class="underline">Fuwei Zhang</span>, Fuzhen Zhuang, Zhulin An, Fei Wang, Yongjun Xu </a>
-                <br>
-                <i>Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval</i>
-                <br>
-                <a href="https://dl.acm.org/doi/pdf/10.1145/3539618.3591784">Paper</a> 
-            </td>
-          </tr>
+                    <div class="space-y-3 text-slate-600 mb-6">
+                        <p>
+                            3nd-year PhD candidate at <a href="https://iai.buaa.edu.cn/" class="text-blue-600 hover:text-blue-700 underline">Institute of Artificial Intelligence</a>, <a href="https://www.buaa.edu.cn/" class="text-blue-600 hover:text-blue-700 underline">Beihang University</a>, supervised by Prof. <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:text-blue-700 underline">Fuzhen Zhuang</a>.
+                        </p>
+                        <p>
+                            Research interests: <span class="font-semibold text-slate-700">Machine Learning</span>, <span class="font-semibold text-slate-700">Data Mining</span>, <span class="font-semibold text-slate-700">Large Language Models</span>, <span class="font-semibold text-slate-700">Information Retrieval</span>, <span class="font-semibold text-slate-700">Recommender Systems</span>, and <span class="font-semibold text-slate-700">Knowledge Graphs</span>.
+                        </p>
+                    </div>
 
-          <td>
-            <subheading>2022</subheading>
-          </td>
+                    <!-- Contact & Social Links -->
+                    <div class="flex flex-col md:flex-row gap-3 text-sm text-slate-600 justify-center md:justify-start">
+                        <a href="mailto:zhangfuwei@buaa.edu.cn" class="hover:text-blue-600 transition-colors">
+                            📧 zhangfuwei@buaa.edu.cn
+                        </a>
+                        <span class="hidden md:inline">|</span>
+                        <a href="https://github.com/zhangfw123" class="hover:text-blue-600 transition-colors">
+                            GitHub
+                        </a>
+                        <span class="hidden md:inline">|</span>
+                        <a href="https://scholar.google.com.hk/citations?user=nrGHgxcAAAAJ&hl=zh-CN" class="hover:text-blue-600 transition-colors">
+                            Google Scholar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <tr>
-            <td valign="center">
-                <span class="tag">[CIKM 2022]</span>&nbsp;&nbsp;<papertitle>Along the time: Timeline-traced embedding for temporal knowledge graph completion</papertitle>
-                <br>
-                <span class="underline">Fuwei Zhang</span>, Zhao Zhang, Xiang Ao, Fuzhen Zhuang, Yongjun Xu, Qing He </a>
-                <br>
-                <i>Proceedings of the 31st ACM International Conference on Information and Knowledge Management</i>
-                <br>
-                <a href="https://dl.acm.org/doi/pdf/10.1145/3511808.3557233">Paper</a> /
-                <a href="https://github.com/zhangfw123/TLT-KGE">Code</a> 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                <span class="tag">[AAAI 2022]</span>&nbsp;&nbsp;<papertitle>Mind the gap: Cross-lingual information retrieval with hierarchical knowledge enhancement</papertitle>
-                <br>
-                <span class="underline">Fuwei Zhang</span>, Zhao Zhang, Xiang Ao, Dehong Gao, Fuzhen Zhuang, Yi Wei, Qing He </a>
-                <br>
-                <i>Proceedings of the AAAI conference on artificial intelligence</i>
-                <br>
-                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/20355/20114">Paper</a> 
-            </td>
-          </tr>
-       
-        </table>
-        <!-- Publications End -->
+        <!-- Latest News Section -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                    <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                    Latest News
+                </h2>
+                <a href="news.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All →</a>
+            </div>
+            <div class="space-y-3">
+                <div class="flex gap-4 text-sm">
+                    <span class="text-slate-400 font-mono flex-shrink-0">2025.11</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>AAAI 2026</strong>.</span>
+                </div>
+                <div class="flex gap-4 text-sm">
+                    <span class="text-slate-400 font-mono flex-shrink-0">2025.10</span>
+                    <span class="text-slate-700">Two papers got accepted by <strong>WSDM 2026</strong>.</span>
+                </div>
+                <div class="flex gap-4 text-sm">
+                    <span class="text-slate-400 font-mono flex-shrink-0">2025.07</span>
+                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>KDD 2026</strong>.</span>
+                </div>
+                <div class="flex gap-4 text-sm">
+                    <span class="text-slate-400 font-mono flex-shrink-0">2025.05</span>
+                    <span class="text-slate-700">Two papers got accepted by <strong>ACL 2025</strong>.</span>
+                </div>
+            </div>
+        </section>
 
-        <!-- Talks Begin -->
-        
-        <!-- Talks End -->
+        <!-- First-Author Publications Section -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                    <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                    Selected Publications
+                </h2>
+                <a href="publications.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All →</a>
+            </div>
 
-        <!-- Profession Begin -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
-          <tr>
-            <td>
-              <heading>Academic Services</heading>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
-          <colgroup>
-                <col span="1" style="width: 23%;">
-                <col span="1" style="width: 77%;">
-          </colgroup>
-        </table>
-        <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
-          <colgroup>
-                <col span="1" style="width: 23%;">
-                <col span="1" style="width: 77%;">
-          </colgroup>
-          <tr>
-            <td valign="center">
-              Conference PC Member & Reviewer
-            </td>
-            <td>
-                ARR 2025
-                <br>
-                KDD 2025, 2026
-                <br>
-                ICLR 2026
-                <br>
-                MM 2025
-                <br>
-                AAAI 2023, 2024, 2026
-                <br>
-                PAKDD 2025
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-                Journal Reviewer
-            </td>
-            <td>
-                TKDE
-                <br>
-                Knowledge and Information Systems
-                <br>
-                Machine Learning
-                <br>
-                Scientific Report
-            </td>
-          </tr>
-        </table>
-        <!-- Profession End -->
+            <div class="publication-item">
+                <div class="publication-year">2026</div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        Multi-Aspect Cross-modal Quantization for Generative Recommendation
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Fuwei Zhang</strong>, Xiaoyu Liu, Dongbo Xi, Jishen Yin, Huan Chen, Peng Yan, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
+                    </p>
+                    <p class="publication-venue">
+                        AAAI 2026 (Oral Presentation)
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/pdf/2511.15122" class="publication-link">Paper</a>
+                        <a href="https://github.com/zhangfw123/MACRec" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Education Begin -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
-          <tr>
-            <td>
-              <heading>Education</heading>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
-          <colgroup>
-                <col span="1" style="width: 23%;">
-                <col span="1" style="width: 77%;">
-          </colgroup>
-          <tr>
-            <td valign="center">
-              2023-
-            </td>
-            <td> 
-                Ph.D in Computer Science and Technology
-                <br>
-                <span><a class="black" href="https://iai.buaa.edu.cn/">Institute of Artificial Intelligence</a>, <a class="black" href="https://www.buaa.edu.cn/">Beihang University</a></span>
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              2020-2023
-            </td>
-            <td> 
-                M. E. in Computer Science and Technology
-                <br>
-                <span><a class="black" href="https://www.ucas.ac.cn/">University of Chinese Academy of Sciences</a> (Cultivation Unit: <a class="black" href="http://www.ict.ac.cn/">Institute of Computing Technology</a>, <a class="black" href="http://www.cas.cn/">Chinese Academy of Sciences</a>)</span>
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              2016-2020
-            </td>
-            <td>
-                B. S. in Computer Science and Technology
-                <br>
-                <span><a class="black" href="https://informatics.xmu.edu.cn/">School of Informatics</a>, <a class="black" href="https://www.xmu.edu.cn/">Xiamen University</a></span>
-            </td>
-          </tr>
-        </table>
-        <!-- Education End -->
-       
-       <!-- Awards Begin -->
-       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
-        <tr>
-          <td>
-            <heading>Honors and Awards</heading>
-          </td>
-        </tr>
-      </table>
-       <ul>
-        <li>2025: National Scholarship (博士国家奖学金).</li>
-        <li>2025: Excellent Graduate Student of BUAA (北京航空航天大学优秀研究生).</li>
-        <li>2024: First-class Scholarship of BUAA (北京航空航天大学学业优秀一等奖学金).</li>
-        <li>2024: Excellent League Member of BUAA (北京航空航天大学优秀共青团员).</li>
-        <li>2023: CIKM 2023 Best Short Paper (CIKM 2023最佳短文奖).</li>
-        <li>2023: Excellent Prize of the President Sholarship (所长优秀奖).</li>
-        <li>2022: Merit Student of UCAS (中国科学院大学三好学生).</li>
-        <li>2021  &amp; 2022: First-class Scholarship of UCAS (中国科学院大学一等奖学金).</li>
-        <li>2020: China Construction Bank Scholarship (建设银行奖学金).</li>
-        <li>2020: Excellent Merit Student of XMU (厦门大学优秀三好学生).</li>
-        <li>2019: Honorable Mention in Mathematical Contest In Modeling (美国大学生数学建模大赛H奖).</li>
-        <li>2018: Panasonic Education Fund Scholarship (Panasonic育英奖学⾦).</li>
-        <li>2018: Second Prize in the China College Students Intelligent Design Competition (中国大学生智能设计竞赛二等奖).</li>
-        <li>2018: Second Prize (Provincial Level) in National College Students Mathematical Contest in Modeling (全国⼤学⽣数学建模竞赛省二等奖).</li>
-        <li>2017 &amp; 2018 &amp; 2019 &amp; 2020: First-class Scholarship of XMU (厦门大学学业优秀一等奖学金).</li>
-        <li>2017 &amp; 2018: Merit Student of XMU (厦门大学三好学生).</li>
-        </ul>
-        <!-- Awards End -->
+            <div class="publication-item">
+                <div class="publication-year"></div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        CAT-ID<sup>2</sup>: Category-Tree Integrated Document Identifier Learning for Generative Retrieval In E-commerce
+                    </h3>
+                    <p class="publication-authors">
+                        Xiaoyu Liu*, <strong>Fuwei Zhang*</strong>, Yiqing Wu, Xinyu Jia, Zenghua Xia, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>, Fei Jiang, Wei Lin
+                    </p>
+                    <p class="publication-venue">
+                        WSDM 2026
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/pdf/2511.01461" class="publication-link">Paper</a>
+                        <a href="https://github.com/lxbdtt/CAT-ID2" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
 
-        <table width="100%" align="center" border="0" cellpadding="12">
-          <tr>
-            <td width="100%" valign="center">
-              <p class="footer">
-                Design: <a href="https://jonbarron.info/" target="_blank" style="color: #777; font-size: 14px;">Jon Barron</a>, <a href="https://liminyang.web.illinois.edu/  " target="_blank" style="color: #777; font-size: 14px;">Limin Yang</a> and <a href="https://sheng-qiang.github.io/" target="_blank" style="color: #777; font-size: 14px;">Qiang Sheng</a> <br>
-              Last updated:
-                <script>
-                  t = new Date(document.lastModified).toLocaleDateString()
-                  document.write(t);
-                </script>
-               &nbsp;&nbsp;
-               <span id="busuanzi_container_site_pv">#Visit: <span id="busuanzi_value_site_pv"></span> (2022/3/22~)</span>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+            <div class="publication-item">
+                <div class="publication-year">2025</div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        Multi-level Relevance Document Identifier Learning for Generative Retrieval
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Fuwei Zhang</strong>, Xiaoyu Liu, Jia Xinyu, Yingfei Zhang, Shuai Zhang, Xiang Li, Wei Lin, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
+                    </p>
+                    <p class="publication-venue">
+                        ACL 2025
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://aclanthology.org/2025.acl-long.497.pdf" class="publication-link">Paper</a>
+                        <a href="https://github.com/zhangfw123/MERGE" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-year"></div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        HierGR: Hierarchical Semantic Representation Enhancement for Generative Retrieval in Food Delivery Search
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Fuwei Zhang*</strong>, Xiaoyu Liu*, Jia Xinyu, Yingfei Zhang, Zenghua Xia, Fei Jiang, Wei Lin, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
+                    </p>
+                    <p class="publication-venue">
+                        ACL 2025
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://aclanthology.org/2025.acl-industry.31.pdf" class="publication-link">Paper</a>
+                        <a href="https://github.com/zhangfw123/HierGR" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-year">2024</div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        Exploring high-order user preference with knowledge graph for recommendation
+                    </h3>
+                    <p class="publication-authors">
+                        Caijun Xu*, <strong>Fuwei Zhang*</strong>, Zhao Zhang, Fuzhen Zhuang, Rui Liu
+                    </p>
+                    <p class="publication-venue">
+                        CIKM 2024
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679921" class="publication-link">Paper</a>
+                        <a href="https://github.com/molumolua/KUPN" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-year"></div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        Multi-view Temporal Knowledge Graph Reasoning
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Fuzhen Zhuang, Zhiqiang Zhang, Jun Zhou, Deqing Wang
+                    </p>
+                    <p class="publication-venue">
+                        CIKM 2024
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679970" class="publication-link">Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-year"></div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        Temporal knowledge graph reasoning with dynamic memory enhancement
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Fuzhen Zhuang, Yu Zhao, Deqing Wang, Hongwei Zheng
+                    </p>
+                    <p class="publication-venue">
+                        TKDE 2024
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10504973" class="publication-link">Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-year">2022</div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        Along the time: Timeline-traced embedding for temporal knowledge graph completion
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Xiang Ao, Fuzhen Zhuang, Yongjun Xu, Qing He
+                    </p>
+                    <p class="publication-venue">
+                        CIKM 2022
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://dl.acm.org/doi/pdf/10.1145/3511808.3557233" class="publication-link">Paper</a>
+                        <a href="https://github.com/zhangfw123/TLT-KGE" class="publication-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-year"></div>
+                <div class="flex-1">
+                    <h3 class="publication-title">
+                        Mind the gap: Cross-lingual information retrieval with hierarchical knowledge enhancement
+                    </h3>
+                    <p class="publication-authors">
+                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Xiang Ao, Dehong Gao, Fuzhen Zhuang, Yi Wei, Qing He
+                    </p>
+                    <p class="publication-venue">
+                        AAAI 2022
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/20355/20114" class="publication-link">Paper</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Recent Awards Section -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                    <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                    Recent Awards
+                </h2>
+                <a href="awards.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All →</a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-3 text-sm text-slate-700">
+                <div class="flex gap-2">
+                    <span class="text-slate-400">2025</span>
+                    <span>National Scholarship (博士国家奖学金)</span>
+                </div>
+                <div class="flex gap-2">
+                    <span class="text-slate-400">2025</span>
+                    <span>Excellent Graduate Student of BUAA</span>
+                </div>
+                <div class="flex gap-2">
+                    <span class="text-slate-400">2024</span>
+                    <span>First-class Scholarship of BUAA</span>
+                </div>
+                <div class="flex gap-2">
+                    <span class="text-slate-400">2023</span>
+                    <span>CIKM 2023 Best Short Paper</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Services Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                Academic Services
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-slate-800 mb-3">Conference PC Member & Reviewer</h3>
+                    <ul class="space-y-1 text-sm text-slate-600">
+                        <li>ARR 2025</li>
+                        <li>KDD 2025, 2026</li>
+                        <li>ICLR 2026</li>
+                        <li>MM 2025</li>
+                        <li>AAAI 2023, 2024, 2026</li>
+                        <li>PAKDD 2025</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-slate-800 mb-3">Journal Reviewer</h3>
+                    <ul class="space-y-1 text-sm text-slate-600">
+                        <li>TKDE</li>
+                        <li>Knowledge and Information Systems</li>
+                        <li>Machine Learning</li>
+                        <li>Scientific Reports</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                Education
+            </h2>
+
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-16 text-sm font-mono text-slate-500 pt-1">2023-</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">Ph.D in Computer Science and Technology</p>
+                        <p class="text-slate-600">
+                            <a href="https://iai.buaa.edu.cn/" class="text-blue-600 hover:underline">Institute of Artificial Intelligence</a>,
+                            <a href="https://www.buaa.edu.cn/" class="text-blue-600 hover:underline">Beihang University</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-16 text-sm font-mono text-slate-500 pt-1">2020-2023</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">M.E. in Computer Science and Technology</p>
+                        <p class="text-slate-600">
+                            <a href="https://www.ucas.ac.cn/" class="text-blue-600 hover:underline">University of Chinese Academy of Sciences</a>
+                            <span class="text-slate-400">(Cultivation Unit: </span>
+                            <a href="http://www.ict.ac.cn/" class="text-blue-600 hover:underline">Institute of Computing Technology</a>,
+                            <a href="http://www.cas.cn/" class="text-blue-600 hover:underline">CAS</a><span class="text-slate-400">)</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-16 text-sm font-mono text-slate-500 pt-1">2016-2020</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">B.S. in Computer Science and Technology</p>
+                        <p class="text-slate-600">
+                            <a href="https://informatics.xmu.edu.cn/" class="text-blue-600 hover:underline">School of Informatics</a>,
+                            <a href="https://www.xmu.edu.cn/" class="text-blue-600 hover:underline">Xiamen University</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 mt-16">
+        <div class="max-w-5xl mx-auto px-6 py-8 text-center text-sm text-slate-500">
+            <p>
+                © 2025 Fuwei Zhang | Generated with <a href="https://claude.ai/code" class="hover:text-blue-600">Claude Code</a>
+            </p>
+            <p class="mt-2">
+                Last updated: <script>document.write(new Date().toLocaleDateString())</script>
+            </p>
+        </div>
+    </footer>
+
 </body>
-
 </html>

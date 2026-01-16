@@ -1,301 +1,221 @@
-<!--
- * @Author: Jon Barron
- * @Date: 2019-05-11 22:15:22
- * @Editors: whyisyoung
- * @EditTime: 2020-10-23 10:57:25
- * @LastEditors:Yongchun Zhu
- * @LastEditTime: 2022-03-22 23:03:00
- -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name=viewport content="width=device-width">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <meta name="google-site-verification" content="p7SNRHPF7y83Q-nNBLkrxFhAAosW2t40unwTxByZ0vo" />
-  <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-
-    a {
-      color: #1772d0;
-      /* color: #07889b; */
-      text-decoration: none;
-    }
-   
-    a.black {
-      color: #000000;
-      /* color: #07889b; */
-      text-decoration: none;
-    }
-
-    a:focus,
-    a:hover {
-      color: #e37222; /* #f09228; */
-      text-decoration: none;
-    }
-
-    body,
-    td,
-    th,
-    tr,
-    p,
-    a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px
-    }
-
-    strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-    }
-
-    heading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 22px;
-      color: #e37222;
-    }
-
-    subheading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 18px;
-      font-style:italic;
-      color: #e37222;
-    }
-
-    papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 32px;
-    }
-
-    .footer {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px;
-      opacity: 0.75;
-      color: #777;
-    }
-
-    .one {
-      width: 160px;
-      height: 160px;
-      position: relative;
-    }
-
-    .two {
-      width: 160px;
-      height: 160px;
-      position: absolute;
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
-    }
-
-    .fade {
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
-    }
-
-    span.highlight {
-      background-color: #ffffd0;
-    }
-
-    span.artifact {
-      color:#6cb41b;
-      padding: 1px;
-    }
-
-    span.underline {
-      border-bottom:1px solid black;
-      padding-bottom:1px;
-    }
-
-    span.tldr {
-      color: #555555;
-    }
-
-    em.highlight {
-      color: #e37222;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="images/zhuyc_icon.ico">
-  <title>Yongchun Zhu's Homepage</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="p7SNRHPF7y83Q-nNBLkrxFhAAosW2t40unwTxByZ0vo" />
+    <title>News - Fuwei Zhang's Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #2563eb;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link.active {
+            color: #2563eb;
+        }
+    </style>
 </head>
 
-<body>
-  <table width="960" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <!-- News Begin -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
-          <tr>
-            <td>
-              <heading>News</heading>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
-          <colgroup>
-            <col span="1" style="width: 23%;">
-            <col span="1" style="width: 77%;">
-          </colgroup>
-          <tr>
-            <td valign="center">
-              07/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for KDD 2026 (August).
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              05/2025
-            </td>
-            <td valign="center">
-              Two papers got accepted by ACL 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2025
-            </td>
-            <td valign="center">
-                One paper got accepted by TKDE.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for ACM MM 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              02/2025
-            </td>
-            <td valign="center">
-              One paper got accepted by BDMA.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              02/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for ARR.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              02/2025
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for KDD 2025 (February).
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              12/2024
-            </td>
-            <td valign="center">
-              One paper got accepted by AAAI 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              12/2024
-            </td>
-            <td valign="center">
-                One paper got accepted by COLING 2025.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2024
-            </td>
-            <td valign="center">
-                Two papers got accepted by CIKM 2024.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2024
-            </td>
-            <td valign="center">
-                One paper got accepted by TKDE.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              01/2024
-            </td>
-            <td valign="center">
-              One paper got accepted by SDM 2024.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2023
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for AAAI 2024.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2023
-            </td>
-            <td valign="center">
-              One paper got accepted by CIKM 2023. 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              04/2023
-            </td>
-            <td valign="center">
-              One paper got accepted by SIGIR 2023.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2022
-            </td>
-            <td valign="center">
-                Invited to serve as a PC Member for AAAI 2023.
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              08/2022
-            </td>
-            <td valign="center">
-              One paper got accepted by CIKM 2022. 
-            </td>
-          </tr>
-          <tr>
-            <td valign="center">
-              12/2021
-            </td>
-            <td valign="center">
-                One paper got accepted by AAAI 2022.
-            </td>
-           </tr>
-        </table>
-        <!-- News End -->
-      </td>
-    </tr>
-  </table>
-</body>
+<body class="bg-white text-slate-800 leading-relaxed">
 
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
+                    Fuwei Zhang
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="publications.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Publications</a>
+                    <a href="news.html" class="nav-link active text-sm font-medium text-blue-600 transition-colors">News</a>
+                    <a href="awards.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Awards</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-slate-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="index.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Home</a>
+                <a href="publications.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Publications</a>
+                <a href="news.html" class="block text-sm font-medium text-blue-600">News</a>
+                <a href="awards.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Awards</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-12">
+
+        <!-- Page Header -->
+        <section class="mb-12">
+            <h1 class="text-4xl font-bold text-slate-900 mb-3 flex items-center gap-3">
+                <span class="w-1 h-10 bg-blue-600 rounded-full"></span>
+                News & Updates
+            </h1>
+            <p class="text-slate-600 ml-7">Latest updates on publications, academic services, and achievements</p>
+        </section>
+
+        <!-- News List -->
+        <section>
+            <div class="space-y-4">
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.11</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>AAAI 2026</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.10</span>
+                    <span class="text-slate-700">Two papers got accepted by <strong>WSDM 2026</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.07</span>
+                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>KDD 2026</strong> (August).</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.05</span>
+                    <span class="text-slate-700">Two papers got accepted by <strong>ACL 2025</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.04</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>TKDE</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.04</span>
+                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>ACM MM 2025</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.02</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>BDMA</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.02</span>
+                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>ARR</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2025.02</span>
+                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>KDD 2025</strong> (February).</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2024.12</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>AAAI 2025</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2024.12</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>COLING 2025</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2024.08</span>
+                    <span class="text-slate-700">Two papers got accepted by <strong>CIKM 2024</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2024.04</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>TKDE</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2024.01</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>SDM 2024</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2023.08</span>
+                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>AAAI 2024</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2023.08</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>CIKM 2023</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2023.04</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>SIGIR 2023</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2022.08</span>
+                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>AAAI 2023</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2022.08</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>CIKM 2022</strong>.</span>
+                </div>
+
+                <div class="flex gap-4 text-sm border-l-2 border-slate-200 pl-4 py-2 hover:border-blue-600 transition-colors">
+                    <span class="text-slate-400 font-mono flex-shrink-0 w-20">2021.12</span>
+                    <span class="text-slate-700">One paper got accepted by <strong>AAAI 2022</strong>.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 mt-16">
+        <div class="max-w-5xl mx-auto px-6 py-8 text-center text-sm text-slate-500">
+            <p>
+                © 2025 Fuwei Zhang | Generated with <a href="https://claude.ai/code" class="hover:text-blue-600">Claude Code</a>
+            </p>
+            <p class="mt-2">
+                Last updated: <script>document.write(new Date().toLocaleDateString())</script>
+            </p>
+        </div>
+    </footer>
+
+</body>
 </html>
