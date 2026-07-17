@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
     <meta name="google-site-verification" content="p7SNRHPF7y83Q-nNBLkrxFhAAosW2t40unwTxByZ0vo" />
     <title>Fuwei Zhang's Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -106,6 +108,567 @@
         .publication-link:hover {
             background-color: #f8fafc;
         }
+
+        /* Academic homepage theme */
+        :root {
+            --page: #ffffff;
+            --soft: #f7f9fb;
+            --soft-blue: #edf4f8;
+            --ink: #24313d;
+            --body: #4b5a68;
+            --muted: #73808c;
+            --line: #dce4ea;
+            --line-strong: #c7d3dc;
+            --navy: #213f5b;
+            --blue: #2f6f99;
+            --blue-dark: #245777;
+            --serif: Georgia, "Times New Roman", Times, serif;
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+            background: var(--page);
+        }
+        body {
+            min-height: 100vh;
+            color: var(--body) !important;
+            background: linear-gradient(180deg, #fbfcfd 0, #ffffff 18rem) !important;
+            font-family: var(--sans);
+        }
+        ::selection {
+            color: #ffffff;
+            background: var(--blue);
+        }
+        a {
+            transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+        }
+        a:hover {
+            color: var(--blue-dark) !important;
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+        }
+        nav.sticky {
+            background: rgba(255, 255, 255, 0.96) !important;
+            border-color: var(--line) !important;
+            box-shadow: 0 1px 8px rgba(31, 52, 70, 0.05);
+        }
+        nav .text-xl {
+            color: var(--navy) !important;
+            font-family: var(--serif);
+            letter-spacing: -0.015em;
+        }
+        .nav-link {
+            padding-bottom: 0.2rem;
+            color: #536473 !important;
+            font-family: var(--sans);
+        }
+        .nav-link::after {
+            height: 2px;
+            background: var(--blue);
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--blue) !important;
+        }
+        button {
+            color: var(--navy) !important;
+        }
+        #mobile-menu {
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--line);
+            border-radius: 0.5rem;
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(31, 52, 70, 0.08);
+        }
+        #mobile-menu a {
+            color: #536473 !important;
+        }
+        main.max-w-5xl {
+            max-width: 68rem;
+        }
+        h1,
+        h2 {
+            color: var(--navy) !important;
+            font-family: var(--serif);
+            letter-spacing: -0.025em;
+        }
+        h2 {
+            padding-bottom: 0.55rem;
+            border-bottom: 1px solid var(--line);
+        }
+        h2 > span.bg-blue-600,
+        h1 > span.bg-blue-600 {
+            width: 0.22rem;
+            background-color: var(--blue) !important;
+        }
+        .text-slate-900,
+        .text-slate-800 {
+            color: var(--ink) !important;
+        }
+        .text-slate-700 {
+            color: #43525f !important;
+        }
+        .text-slate-600 {
+            color: var(--body) !important;
+        }
+        .text-slate-500 {
+            color: var(--muted) !important;
+        }
+        .text-slate-400 {
+            color: #8a96a0 !important;
+        }
+        .text-blue-600,
+        .text-blue-700 {
+            color: var(--blue) !important;
+        }
+        .bg-blue-600 {
+            background-color: var(--blue) !important;
+        }
+        .border-slate-200 {
+            border-color: var(--line) !important;
+        }
+        strong {
+            color: var(--ink);
+        }
+        .profile-card {
+            padding: 2rem;
+            border: 1px solid var(--line);
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, var(--soft) 0%, #ffffff 72%);
+            box-shadow: 0 12px 32px rgba(31, 52, 70, 0.06);
+        }
+        .profile-card img {
+            border: 1px solid var(--line-strong);
+            border-radius: 0.75rem !important;
+            box-shadow: 0 8px 22px rgba(31, 52, 70, 0.12) !important;
+        }
+        .profile-card h1 {
+            color: var(--navy) !important;
+        }
+        .profile-card .text-xl {
+            color: var(--muted) !important;
+            font-family: var(--serif);
+        }
+        .profile-card .space-y-3 {
+            max-width: 49rem;
+        }
+        .profile-card .justify-center a {
+            color: var(--blue);
+            font-weight: 500;
+        }
+        .publication-item {
+            margin-bottom: 0;
+            padding: 1.3rem 0.85rem;
+            border-bottom: 1px solid var(--line);
+            background: transparent;
+            transition: background-color 160ms ease;
+        }
+        .publication-item:hover {
+            background: #fafcfd;
+        }
+        .featured-publication {
+            border-left: 3px solid var(--blue);
+            background: var(--soft);
+        }
+        .publication-year {
+            color: var(--muted);
+            font-family: var(--sans);
+            font-weight: 600;
+        }
+        .publication-title {
+            color: var(--navy);
+            font-family: var(--serif);
+            font-size: 1.08rem;
+            line-height: 1.45;
+        }
+        .publication-item:hover .publication-title {
+            color: var(--blue-dark);
+        }
+        .publication-authors {
+            color: var(--body);
+            line-height: 1.6;
+        }
+        .publication-authors strong {
+            color: var(--navy);
+        }
+        .publication-venue {
+            color: #667886;
+            font-family: var(--sans);
+            font-style: italic;
+        }
+        .publication-link {
+            padding: 0.28rem 0.7rem;
+            border-color: #b9cad6;
+            border-radius: 0.3rem;
+            color: var(--blue);
+            background: #ffffff;
+            font-family: var(--sans);
+            font-weight: 600;
+        }
+        .publication-link:hover {
+            border-color: var(--blue);
+            background: var(--soft-blue);
+        }
+        .pub-status {
+            display: inline-block;
+            margin-right: 0.55rem;
+            padding: 0.12rem 0.45rem;
+            border: 1px solid #b7cad8;
+            border-radius: 999px;
+            color: var(--blue);
+            background: var(--soft-blue);
+            font: 600 0.62rem/1.35 var(--sans);
+            vertical-align: 0.16rem;
+            letter-spacing: 0.04em;
+        }
+        .news-item,
+        .space-y-4 > div[class*="border-l-2"] {
+            padding: 0.75rem 0.95rem;
+            border: 1px solid var(--line) !important;
+            border-left: 3px solid #b7cad8 !important;
+            border-radius: 0.35rem;
+            background: #ffffff;
+        }
+        .news-item:hover,
+        .space-y-4 > div[class*="border-l-2"]:hover {
+            border-left-color: var(--blue) !important;
+            background: var(--soft);
+        }
+        .news-item > span:first-child,
+        .space-y-4 > div[class*="border-l-2"] > span:first-child {
+            color: var(--muted) !important;
+        }
+        .metric-grid > div,
+        .info-grid > div,
+        .timeline-list > div {
+            padding: 1rem 1.1rem;
+            border: 1px solid var(--line);
+            border-radius: 0.45rem;
+            background: var(--soft);
+        }
+        .award-item {
+            border: 1px solid var(--line);
+            border-radius: 0.45rem;
+            background: #ffffff;
+            box-shadow: none;
+        }
+        .award-item:hover {
+            border-color: var(--line-strong);
+            background: var(--soft);
+            box-shadow: 0 8px 20px rgba(31, 52, 70, 0.06);
+        }
+        .award-year {
+            color: var(--blue);
+        }
+        .award-title {
+            color: var(--ink);
+        }
+        main > section:first-child:not(.profile-card) {
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--line);
+        }
+        footer {
+            border-color: var(--line) !important;
+            color: var(--muted) !important;
+            background: var(--soft);
+        }
+        @media (max-width: 767px) {
+            .profile-card {
+                padding: 1.4rem;
+            }
+            .publication-item {
+                padding: 1.1rem 0.75rem;
+            }
+            .publication-year {
+                width: auto;
+            }
+            nav .text-xl {
+                font-size: 1.05rem;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+        /* Iconography and publication grouping */
+        .brand-icon,
+        .nav-link::before,
+        #mobile-menu a::before,
+        .profile-card a::before,
+        .publication-link::before {
+            display: inline-block;
+            width: 1.05rem;
+            margin-right: 0.4rem;
+            text-align: center;
+            color: #6f8798;
+        }
+        nav a.text-xl::before {
+            content: "\f19d";
+            display: inline-block;
+            margin-right: 0.45rem;
+            color: var(--blue);
+            font-family: "Font Awesome 6 Free";
+            font-size: 0.9em;
+            font-weight: 900;
+        }
+        nav a[href="index.html"]:not(.text-xl)::before {
+            content: "\f015";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        nav a[href="publications.html"]::before {
+            content: "\f02d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        nav a[href="news.html"]::before {
+            content: "\f1ea";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        nav a[href="awards.html"]::before {
+            content: "\f091";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .nav-link.active::before,
+        #mobile-menu a.text-blue-600::before {
+            color: var(--blue);
+        }
+        .profile-card a[href^="mailto:"]::before {
+            content: "\f0e0";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .profile-card a[href*="github.com"]::before {
+            content: "\f09b";
+            color: #38434d;
+            font-family: "Font Awesome 6 Brands";
+            font-weight: 400;
+        }
+        .profile-card a[href*="scholar.google"]::before {
+            content: "\f19d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .section-icon,
+        .page-title-icon {
+            color: var(--blue);
+            font-size: 0.82em;
+        }
+        .heading-action-icon {
+            margin-left: 0.25rem;
+            font-size: 0.72rem;
+        }
+        .publication-link::before {
+            content: "\f15c";
+            color: #6f8798;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .publication-link[href*="github.com"]::before {
+            content: "\f09b";
+            color: #38434d;
+            font-family: "Font Awesome 6 Brands";
+            font-weight: 400;
+        }
+        .publication-link[href*="huggingface.co"]::before {
+            content: "\f1c0";
+            color: #6f8798;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .publication-group + .publication-group {
+            margin-top: 2.5rem;
+        }
+        .publication-category {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.45rem;
+            padding: 0.85rem 1rem;
+            border-left: 4px solid var(--blue);
+            border-radius: 0 0.45rem 0.45rem 0;
+            color: var(--navy);
+            background: var(--soft-blue);
+            font-family: var(--serif);
+            font-size: 1.22rem;
+            font-weight: 700;
+        }
+        .category-icon {
+            display: inline-flex;
+            width: 2rem;
+            height: 2rem;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #c7d7e2;
+            border-radius: 50%;
+            color: var(--blue);
+            background: #ffffff;
+            font-size: 0.85rem;
+        }
+        .publication-count {
+            margin-left: auto;
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        @media (max-width: 767px) {
+            .publication-category {
+                align-items: flex-start;
+                font-size: 1.08rem;
+            }
+            .publication-count {
+                display: none;
+            }
+        }
+        /* Minimal styles for scrolling news and contact dialog */
+        .profile-note {
+            font-size: 0.9rem;
+        }
+        .contact-inline-button {
+            display: inline;
+            padding: 0;
+            border: 0;
+            color: var(--blue) !important;
+            background: transparent;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .contact-inline-button:hover {
+            text-decoration: underline;
+        }
+        .contact-inline-button i {
+            margin-right: 0.2rem;
+            font-size: 0.82em;
+        }
+        .qr-dialog {
+            width: min(90vw, 27rem);
+            max-width: none;
+            padding: 0;
+            border: 0;
+            border-radius: 0.75rem;
+            color: var(--body);
+            background: #ffffff;
+            box-shadow: 0 24px 70px rgba(31, 52, 70, 0.24);
+        }
+        .qr-dialog::backdrop {
+            background: rgba(31, 41, 55, 0.58);
+            backdrop-filter: blur(3px);
+        }
+        .qr-dialog-card {
+            position: relative;
+            padding: 1.5rem;
+            border: 1px solid var(--line);
+            border-radius: 0.75rem;
+            background: #ffffff;
+        }
+        .qr-close {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            display: inline-grid;
+            width: 2rem;
+            height: 2rem;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            color: var(--muted) !important;
+            background: #ffffff;
+            cursor: pointer;
+        }
+        .qr-dialog-heading {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            padding-right: 2.5rem;
+        }
+        .qr-dialog-icon {
+            display: inline-grid;
+            width: 2.4rem;
+            height: 2.4rem;
+            flex-shrink: 0;
+            place-items: center;
+            border-radius: 50%;
+            color: #ffffff;
+            background: var(--blue);
+            font-size: 1.1rem;
+        }
+        .qr-dialog h2 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            color: var(--navy) !important;
+            font-size: 1.35rem;
+        }
+        .qr-dialog-heading p {
+            margin-top: 0.12rem;
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+        .qr-dialog img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 1.2rem auto 0;
+            border: 1px solid var(--line);
+            border-radius: 0.55rem;
+            background: #ffffff;
+        }
+        .news-ticker {
+            position: relative;
+            height: 13.6rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 0.2rem 0.25rem;
+            border-radius: 0.45rem;
+            overscroll-behavior: contain;
+            scrollbar-color: #b9cad6 transparent;
+            scrollbar-width: thin;
+        }
+        .news-ticker:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+        }
+        .news-cycle {
+            display: grid;
+            gap: 0.7rem;
+            padding-bottom: 0.2rem;
+        }
+        .news-ticker .news-item {
+            min-height: 3.65rem;
+            align-items: center;
+            border-left-color: var(--blue) !important;
+            box-shadow: none;
+        }
+        .news-ticker .news-item > span:first-child {
+            padding: 0.18rem 0.4rem;
+            border-radius: 0.25rem;
+            color: var(--blue) !important;
+            background: var(--soft-blue);
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+        @media (max-width: 767px) {
+            .news-ticker {
+                height: 15rem;
+            }
+            .news-ticker .news-item {
+                min-height: 4.2rem;
+            }
+        }
     </style>
 </head>
 
@@ -119,7 +682,7 @@
                     Fuwei Zhang
                 </a>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="index.html" class="nav-link active text-sm font-medium text-blue-600 transition-colors">Home</a>
                     <a href="publications.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Publications</a>
                     <a href="news.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">News</a>
                     <a href="awards.html" class="nav-link text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">Awards</a>
@@ -133,7 +696,7 @@
             </div>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-                <a href="index.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Home</a>
+                <a href="index.html" class="block text-sm font-medium text-blue-600">Home</a>
                 <a href="publications.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Publications</a>
                 <a href="news.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">News</a>
                 <a href="awards.html" class="block text-sm font-medium text-slate-700 hover:text-blue-600">Awards</a>
@@ -145,7 +708,7 @@
     <main class="max-w-5xl mx-auto px-6 py-12">
 
         <!-- Hero Section -->
-        <section class="mb-16">
+        <section class="mb-16 profile-card">
             <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
                 <!-- Profile Image -->
                 <div class="flex-shrink-0">
@@ -163,29 +726,49 @@
 
                     <div class="space-y-3 text-slate-600 mb-6">
                         <p>
-                            3nd-year PhD candidate at <a href="https://iai.buaa.edu.cn/" class="text-blue-600 hover:text-blue-700 underline">Institute of Artificial Intelligence</a>, <a href="https://www.buaa.edu.cn/" class="text-blue-600 hover:text-blue-700 underline">Beihang University</a>, supervised by Prof. <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:text-blue-700 underline">Fuzhen Zhuang</a>.
+                            3rd-year PhD candidate at <a href="https://iai.buaa.edu.cn/" class="text-blue-600 hover:text-blue-700 underline">Institute of Artificial Intelligence</a>, <a href="https://www.buaa.edu.cn/" class="text-blue-600 hover:text-blue-700 underline">Beihang University</a>, supervised by Prof. <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:text-blue-700 underline">Fuzhen Zhuang</a>.
                         </p>
                         <p>
                             Research interests: <span class="font-semibold text-slate-700">Machine Learning</span>, <span class="font-semibold text-slate-700">Data Mining</span>, <span class="font-semibold text-slate-700">Large Language Models</span>, <span class="font-semibold text-slate-700">Information Retrieval</span>, <span class="font-semibold text-slate-700">Recommender Systems</span>, and <span class="font-semibold text-slate-700">Knowledge Graphs</span>.
+                        </p>
+                        <p class="profile-note">
+                            I will graduate in 2027 and am currently seeking job opportunities. Please feel free to
+                            <button type="button" class="contact-inline-button" aria-haspopup="dialog" aria-controls="contact-qr" onclick="const dialog = document.getElementById('contact-qr'); const qr = dialog.querySelector('img'); if (!qr.getAttribute('src')) qr.setAttribute('src', qr.dataset.src); dialog.showModal()"><i class="fa-brands fa-weixin" aria-hidden="true"></i>contact me via WeChat</button>.
                         </p>
                     </div>
 
                     <!-- Contact & Social Links -->
                     <div class="flex flex-col md:flex-row gap-3 text-sm text-slate-600 justify-center md:justify-start">
                         <a href="mailto:zhangfuwei@buaa.edu.cn" class="hover:text-blue-600 transition-colors">
-                            📧 zhangfuwei@buaa.edu.cn
+                            zhangfuwei@buaa.edu.cn
                         </a>
                         <span class="hidden md:inline">|</span>
                         <a href="https://github.com/zhangfw123" class="hover:text-blue-600 transition-colors">
                             GitHub
                         </a>
                         <span class="hidden md:inline">|</span>
-                        <a href="https://scholar.google.com.hk/citations?user=nrGHgxcAAAAJ&hl=zh-CN" class="hover:text-blue-600 transition-colors">
+                        <a href="https://scholar.google.com.hk/citations?user=nrGHgxcAAAAJ&amp;hl=zh-CN" class="hover:text-blue-600 transition-colors">
                             Google Scholar
                         </a>
                     </div>
                 </div>
             </div>
+
+            <dialog id="contact-qr" class="qr-dialog" aria-labelledby="qr-dialog-title" onclick="if (event.target === this) this.close()">
+                <div class="qr-dialog-card">
+                    <form method="dialog">
+                        <button class="qr-close" aria-label="Close QR code"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                    </form>
+                    <div class="qr-dialog-heading">
+                        <span class="qr-dialog-icon" aria-hidden="true"><i class="fa-brands fa-weixin"></i></span>
+                        <div>
+                            <h2 id="qr-dialog-title">Connect on WeChat</h2>
+                            <p>Scan the QR code to get in touch.</p>
+                        </div>
+                    </div>
+                    <img data-src="images/qrcode.png" alt="WeChat QR code for Fuwei Zhang" width="710" height="714">
+                </div>
+            </dialog>
         </section>
 
         <!-- Latest News Section -->
@@ -193,26 +776,43 @@
             <div class="flex items-center justify-between mb-6">
                 <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                    <i class="fa-regular fa-newspaper section-icon" aria-hidden="true"></i>
                     Latest News
                 </h2>
-                <a href="news.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All →</a>
+                <a href="news.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All <i class="fa-solid fa-arrow-right heading-action-icon" aria-hidden="true"></i></a>
             </div>
-            <div class="space-y-3">
-                <div class="flex gap-4 text-sm">
-                    <span class="text-slate-400 font-mono flex-shrink-0">2025.11</span>
-                    <span class="text-slate-700">One paper got accepted by <strong>AAAI 2026</strong>.</span>
-                </div>
-                <div class="flex gap-4 text-sm">
-                    <span class="text-slate-400 font-mono flex-shrink-0">2025.10</span>
-                    <span class="text-slate-700">Two papers got accepted by <strong>WSDM 2026</strong>.</span>
-                </div>
-                <div class="flex gap-4 text-sm">
-                    <span class="text-slate-400 font-mono flex-shrink-0">2025.07</span>
-                    <span class="text-slate-700">Invited to serve as a PC Member for <strong>KDD 2026</strong>.</span>
-                </div>
-                <div class="flex gap-4 text-sm">
-                    <span class="text-slate-400 font-mono flex-shrink-0">2025.05</span>
-                    <span class="text-slate-700">Two papers got accepted by <strong>ACL 2025</strong>.</span>
+            <div class="news-ticker" tabindex="0" aria-label="Latest news; scroll vertically for more">
+                <div class="news-track">
+                    <div class="news-cycle">
+                        <div class="news-item flex gap-4 text-sm">
+                            <span class="text-slate-400 font-mono flex-shrink-0">2026.07</span>
+                            <span class="text-slate-700">Invited to serve as a PC Member for <strong>AAAI 2027</strong>, and as a reviewer for <strong>KDD 2027</strong> and the <strong>EMNLP 2026 Industry Track</strong>.</span>
+                        </div>
+                        <div class="news-item flex gap-4 text-sm">
+                            <span class="text-slate-400 font-mono flex-shrink-0">2026.06</span>
+                            <span class="text-slate-700">We released <a href="https://github.com/zhangfw123/CORE-Bench-Eval"><strong>CORE-Bench</strong></a>, a comprehensive benchmark for evaluating retrieval in agentic coding.</span>
+                        </div>
+                        <div class="news-item flex gap-4 text-sm">
+                            <span class="text-slate-400 font-mono flex-shrink-0">2026.05</span>
+                            <span class="text-slate-700">Two papers got accepted by <strong>ICML 2026</strong>.</span>
+                        </div>
+                        <div class="news-item flex gap-4 text-sm">
+                            <span class="text-slate-400 font-mono flex-shrink-0">2025.11</span>
+                            <span class="text-slate-700">One paper got accepted by <strong>AAAI 2026</strong>.</span>
+                        </div>
+                        <div class="news-item flex gap-4 text-sm">
+                            <span class="text-slate-400 font-mono flex-shrink-0">2025.10</span>
+                            <span class="text-slate-700">Two papers got accepted by <strong>WSDM 2026</strong>.</span>
+                        </div>
+                        <div class="news-item flex gap-4 text-sm">
+                            <span class="text-slate-400 font-mono flex-shrink-0">2025.07</span>
+                            <span class="text-slate-700">Invited to serve as a PC Member for <strong>KDD 2026</strong>.</span>
+                        </div>
+                        <div class="news-item flex gap-4 text-sm">
+                            <span class="text-slate-400 font-mono flex-shrink-0">2025.05</span>
+                            <span class="text-slate-700">Two papers got accepted by <strong>ACL 2025</strong>.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -222,193 +822,248 @@
             <div class="flex items-center justify-between mb-6">
                 <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                    <i class="fa-solid fa-book-open section-icon" aria-hidden="true"></i>
                     Selected Publications
                 </h2>
-                <a href="publications.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All →</a>
+                <a href="publications.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All <i class="fa-solid fa-arrow-right heading-action-icon" aria-hidden="true"></i></a>
             </div>
 
-            <div class="publication-item">
-                <div class="publication-year">2026</div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Multi-Aspect Cross-modal Quantization for Generative Recommendation
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang</strong>, Xiaoyu Liu, Dongbo Xi, Jishen Yin, Huan Chen, Peng Yan, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
-                    </p>
-                    <p class="publication-venue">
-                        AAAI 2026 (Oral Presentation)
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/pdf/2511.15122" class="publication-link">Paper</a>
-                        <a href="https://github.com/zhangfw123/MACRec" class="publication-link">Code</a>
+            <div class="publication-group information-retrieval-group">
+                <h3 class="publication-category">
+                    <span class="category-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+                    <span>Information Retrieval &amp; Recommendation</span>
+                    <span class="publication-count">7 publications</span>
+                </h3>
+
+                <div class="publication-item featured-publication">
+                    <div class="publication-year">2026</div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            <span class="pub-status">NEW</span>CORE-Bench: A Comprehensive Benchmark for Code Retrieval in the Era of Agentic Coding
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Yanzhao Zhang, Mingxin Li, Dingkun Long, Lexiang Hu, Pengjun Xie, Zhao Zhang, Fuzhen Zhuang
+                        </p>
+                        <p class="publication-venue">
+                            arXiv 2026 · Code Retrieval Benchmark
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/abs/2606.11864" class="publication-link">Paper</a>
+                            <a href="https://github.com/zhangfw123/CORE-Bench-Eval" class="publication-link">Code</a>
+                            <a href="https://huggingface.co/datasets/zhangfw123/CORE-Bench" class="publication-link">Dataset</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item featured-publication">
+                    <div class="publication-year"></div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            <span class="pub-status">NEW</span>Beyond Matching: Category-Guided Latent Intent Reasoning for Generative Retrieval in E-Commerce
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Xiaoyu Liu, Jiajie Jin, Jiale Mao, Wei Chen, Dongbo Xi, Yifan Yang, Peng Yan, Zichao Hao, Zhao Zhang, Fuzhen Zhuang
+                        </p>
+                        <p class="publication-venue">
+                            arXiv 2026 · Generative Retrieval
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/abs/2606.07075" class="publication-link">Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-year"></div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Multi-Aspect Cross-modal Quantization for Generative Recommendation
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Xiaoyu Liu, Dongbo Xi, Jishen Yin, Huan Chen, Peng Yan, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
+                        </p>
+                        <p class="publication-venue">
+                            AAAI 2026 (Oral Presentation)
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2511.15122" class="publication-link">Paper</a>
+                            <a href="https://github.com/zhangfw123/MACRec" class="publication-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-year"></div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            CAT-ID<sup>2</sup>: Category-Tree Integrated Document Identifier Learning for Generative Retrieval In E-commerce
+                        </h3>
+                        <p class="publication-authors">
+                            Xiaoyu Liu*, <strong>Fuwei Zhang*</strong>, Yiqing Wu, Xinyu Jia, Zenghua Xia, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>, Fei Jiang, Wei Lin
+                        </p>
+                        <p class="publication-venue">
+                            WSDM 2026
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2511.01461" class="publication-link">Paper</a>
+                            <a href="https://github.com/lxbdtt/CAT-ID2" class="publication-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-year">2025</div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Multi-level Relevance Document Identifier Learning for Generative Retrieval
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Xiaoyu Liu, Jia Xinyu, Yingfei Zhang, Shuai Zhang, Xiang Li, Wei Lin, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
+                        </p>
+                        <p class="publication-venue">
+                            ACL 2025
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://aclanthology.org/2025.acl-long.497.pdf" class="publication-link">Paper</a>
+                            <a href="https://github.com/zhangfw123/MERGE" class="publication-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-year"></div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            HierGR: Hierarchical Semantic Representation Enhancement for Generative Retrieval in Food Delivery Search
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang*</strong>, Xiaoyu Liu*, Jia Xinyu, Yingfei Zhang, Zenghua Xia, Fei Jiang, Wei Lin, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
+                        </p>
+                        <p class="publication-venue">
+                            ACL 2025
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://aclanthology.org/2025.acl-industry.31.pdf" class="publication-link">Paper</a>
+                            <a href="https://github.com/zhangfw123/HierGR" class="publication-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-year"></div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Mind the gap: Cross-lingual information retrieval with hierarchical knowledge enhancement
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Zhao Zhang, Xiang Ao, Dehong Gao, Fuzhen Zhuang, Yi Wei, Qing He
+                        </p>
+                        <p class="publication-venue">
+                            AAAI 2022
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/20355/20114" class="publication-link">Paper</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="publication-item">
-                <div class="publication-year"></div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        CAT-ID<sup>2</sup>: Category-Tree Integrated Document Identifier Learning for Generative Retrieval In E-commerce
-                    </h3>
-                    <p class="publication-authors">
-                        Xiaoyu Liu*, <strong>Fuwei Zhang*</strong>, Yiqing Wu, Xinyu Jia, Zenghua Xia, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>, Fei Jiang, Wei Lin
-                    </p>
-                    <p class="publication-venue">
-                        WSDM 2026
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/pdf/2511.01461" class="publication-link">Paper</a>
-                        <a href="https://github.com/lxbdtt/CAT-ID2" class="publication-link">Code</a>
+            <div class="publication-group knowledge-graph-group">
+                <h3 class="publication-category">
+                    <span class="category-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+                    <span>Knowledge Graph</span>
+                    <span class="publication-count">5 publications</span>
+                </h3>
+
+                <div class="publication-item">
+                    <div class="publication-year">2026</div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Temporal Knowledge Graph Reasoning via Multigranularity Knowledge Refinement
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>, Pengpeng Zhao
+                        </p>
+                        <p class="publication-venue">
+                            Frontiers of Computer Science
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://doi.org/10.1007/s11704-026-51857-8" class="publication-link">Paper</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="publication-item">
-                <div class="publication-year"></div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Temporal Knowledge Graph Reasoning via Multigranularity Knowledge Refinement
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang</strong>, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>, Pengpeng Zhao
-                    </p>
-                    <p class="publication-venue">
-                        Frontiers of Computer Science
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1007/s11704-026-51857-8" class="publication-link">Paper</a>
+                <div class="publication-item">
+                    <div class="publication-year">2024</div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Exploring high-order user preference with knowledge graph for recommendation
+                        </h3>
+                        <p class="publication-authors">
+                            Caijun Xu*, <strong>Fuwei Zhang*</strong>, Zhao Zhang, Fuzhen Zhuang, Rui Liu
+                        </p>
+                        <p class="publication-venue">
+                            CIKM 2024
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679921" class="publication-link">Paper</a>
+                            <a href="https://github.com/molumolua/KUPN" class="publication-link">Code</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="publication-item">
-                <div class="publication-year">2025</div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Multi-level Relevance Document Identifier Learning for Generative Retrieval
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang</strong>, Xiaoyu Liu, Jia Xinyu, Yingfei Zhang, Shuai Zhang, Xiang Li, Wei Lin, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
-                    </p>
-                    <p class="publication-venue">
-                        ACL 2025
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://aclanthology.org/2025.acl-long.497.pdf" class="publication-link">Paper</a>
-                        <a href="https://github.com/zhangfw123/MERGE" class="publication-link">Code</a>
+                <div class="publication-item">
+                    <div class="publication-year"></div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Multi-view Temporal Knowledge Graph Reasoning
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Zhao Zhang, Fuzhen Zhuang, Zhiqiang Zhang, Jun Zhou, Deqing Wang
+                        </p>
+                        <p class="publication-venue">
+                            CIKM 2024
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679970" class="publication-link">Paper</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="publication-item">
-                <div class="publication-year"></div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        HierGR: Hierarchical Semantic Representation Enhancement for Generative Retrieval in Food Delivery Search
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang*</strong>, Xiaoyu Liu*, Jia Xinyu, Yingfei Zhang, Zenghua Xia, Fei Jiang, Wei Lin, <a href="https://fuzhenzhuang.github.io/" class="text-blue-600 hover:underline">Fuzhen Zhuang</a>, <a href="https://scholar.google.com.hk/citations?user=i8a07CgAAAAJ" class="text-blue-600 hover:underline">Zhao Zhang</a>
-                    </p>
-                    <p class="publication-venue">
-                        ACL 2025
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://aclanthology.org/2025.acl-industry.31.pdf" class="publication-link">Paper</a>
-                        <a href="https://github.com/zhangfw123/HierGR" class="publication-link">Code</a>
+                <div class="publication-item">
+                    <div class="publication-year"></div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Temporal knowledge graph reasoning with dynamic memory enhancement
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Zhao Zhang, Fuzhen Zhuang, Yu Zhao, Deqing Wang, Hongwei Zheng
+                        </p>
+                        <p class="publication-venue">
+                            TKDE 2024
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://ieeexplore.ieee.org/abstract/document/10504973" class="publication-link">Paper</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="publication-item">
-                <div class="publication-year">2024</div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Exploring high-order user preference with knowledge graph for recommendation
-                    </h3>
-                    <p class="publication-authors">
-                        Caijun Xu*, <strong>Fuwei Zhang*</strong>, Zhao Zhang, Fuzhen Zhuang, Rui Liu
-                    </p>
-                    <p class="publication-venue">
-                        CIKM 2024
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679921" class="publication-link">Paper</a>
-                        <a href="https://github.com/molumolua/KUPN" class="publication-link">Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="publication-year"></div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Multi-view Temporal Knowledge Graph Reasoning
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Fuzhen Zhuang, Zhiqiang Zhang, Jun Zhou, Deqing Wang
-                    </p>
-                    <p class="publication-venue">
-                        CIKM 2024
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679970" class="publication-link">Paper</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="publication-year"></div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Temporal knowledge graph reasoning with dynamic memory enhancement
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Fuzhen Zhuang, Yu Zhao, Deqing Wang, Hongwei Zheng
-                    </p>
-                    <p class="publication-venue">
-                        TKDE 2024
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/10504973" class="publication-link">Paper</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="publication-year">2022</div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Along the time: Timeline-traced embedding for temporal knowledge graph completion
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Xiang Ao, Fuzhen Zhuang, Yongjun Xu, Qing He
-                    </p>
-                    <p class="publication-venue">
-                        CIKM 2022
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://dl.acm.org/doi/pdf/10.1145/3511808.3557233" class="publication-link">Paper</a>
-                        <a href="https://github.com/zhangfw123/TLT-KGE" class="publication-link">Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="publication-year"></div>
-                <div class="flex-1">
-                    <h3 class="publication-title">
-                        Mind the gap: Cross-lingual information retrieval with hierarchical knowledge enhancement
-                    </h3>
-                    <p class="publication-authors">
-                        <strong>Fuwei Zhang</strong>, Zhao Zhang, Xiang Ao, Dehong Gao, Fuzhen Zhuang, Yi Wei, Qing He
-                    </p>
-                    <p class="publication-venue">
-                        AAAI 2022
-                    </p>
-                    <div class="publication-links">
-                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/20355/20114" class="publication-link">Paper</a>
+                <div class="publication-item">
+                    <div class="publication-year">2022</div>
+                    <div class="flex-1">
+                        <h3 class="publication-title">
+                            Along the time: Timeline-traced embedding for temporal knowledge graph completion
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Fuwei Zhang</strong>, Zhao Zhang, Xiang Ao, Fuzhen Zhuang, Yongjun Xu, Qing He
+                        </p>
+                        <p class="publication-venue">
+                            CIKM 2022
+                        </p>
+                        <div class="publication-links">
+                            <a href="https://dl.acm.org/doi/pdf/10.1145/3511808.3557233" class="publication-link">Paper</a>
+                            <a href="https://github.com/zhangfw123/TLT-KGE" class="publication-link">Code</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -420,12 +1075,13 @@
             <div class="flex items-center justify-between mb-6">
                 <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                    <i class="fa-solid fa-award section-icon" aria-hidden="true"></i>
                     Recent Awards
                 </h2>
-                <a href="awards.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All →</a>
+                <a href="awards.html" class="text-sm text-blue-600 hover:text-blue-700 font-medium">View All <i class="fa-solid fa-arrow-right heading-action-icon" aria-hidden="true"></i></a>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-3 text-sm text-slate-700">
+            <div class="metric-grid grid md:grid-cols-2 gap-3 text-sm text-slate-700">
                 <div class="flex gap-2">
                     <span class="text-slate-400">2025</span>
                     <span>National Scholarship (博士国家奖学金)</span>
@@ -449,18 +1105,20 @@
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                 <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                <i class="fa-solid fa-users section-icon" aria-hidden="true"></i>
                 Academic Services
             </h2>
 
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="info-grid grid md:grid-cols-2 gap-6">
                 <div>
-                    <h3 class="font-semibold text-slate-800 mb-3">Conference PC Member & Reviewer</h3>
+                    <h3 class="font-semibold text-slate-800 mb-3">Conference PC Member &amp; Reviewer</h3>
                     <ul class="space-y-1 text-sm text-slate-600">
                         <li>ARR 2025</li>
-                        <li>KDD 2025, 2026</li>
+                        <li>KDD 2025, 2026, 2027</li>
+                        <li>EMNLP 2026 Industry Track</li>
                         <li>ICLR 2026</li>
                         <li>MM 2025</li>
-                        <li>AAAI 2023, 2024, 2026</li>
+                        <li>AAAI 2023, 2024, 2026, 2027</li>
                         <li>PAKDD 2025</li>
                     </ul>
                 </div>
@@ -481,10 +1139,11 @@
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                 <span class="w-1 h-8 bg-blue-600 rounded-full"></span>
+                <i class="fa-solid fa-graduation-cap section-icon" aria-hidden="true"></i>
                 Education
             </h2>
 
-            <div class="space-y-6">
+            <div class="timeline-list space-y-6">
                 <div class="flex gap-4">
                     <div class="flex-shrink-0 w-16 text-sm font-mono text-slate-500 pt-1">2023-</div>
                     <div>
@@ -528,7 +1187,7 @@
     <footer class="border-t border-slate-200 mt-16">
         <div class="max-w-5xl mx-auto px-6 py-8 text-center text-sm text-slate-500">
             <p>
-                © 2025 Fuwei Zhang | Generated with <a href="https://claude.ai/code" class="hover:text-blue-600">Claude Code</a>
+                © 2026 Fuwei Zhang
             </p>
             <p class="mt-2">
                 Last updated: <script>document.write(new Date().toLocaleDateString())</script>
